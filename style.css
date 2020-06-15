@@ -1,9 +1,9 @@
 /*
 Theme Name: Modern Tech
-Theme URI: https://www.techcetblog.com/themes/moderntech
+Theme URI: https://github.com/surajitbasak109/md-modern-tech-theme
 Author: Suajit Basak
 Author URI: https://www.techcetblog.com/
-Description: Modern Tech theme for nerds.
+Description: Modern Tech theme for material design lovers.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,9 +15,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 html {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-	font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
