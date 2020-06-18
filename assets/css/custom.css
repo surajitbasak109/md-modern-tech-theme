@@ -1,9 +1,108 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Noto Sans', sans-serif;
-  clear: both;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans', sans-serif;
+    clear: both;
+}
+
+a:visited {
+    color: #005f56;
+}
+
+.site {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.fixed-top {
+    position: fixed;
+    contain: layout;
+    top: 0;
+    z-index: 1006;
+    width: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+.site-branding {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-bottom: 1px solid #bdc1c6;
+    pointer-events: all;
+}
+
+.site-header .top-logo-row {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 64px;
+    padding: 0 24px;
+    position: relative;
+}
+
+.site-title-wrapper {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    height: 36px;
+    margin: 6px 0;
+    z-index: 102;
+}
+
+header .top-logo-row {
+    background: #fff;
+    padding-left: 16px;
+}
+
+.site-title {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.site-description-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.site-description-wrapper .site-description {
+    margin: 1rem 0;
+}
+
+.site-title a {
+    color: #5f6368;
+    fill: #5f6368;
+    font-size: 18px;
+}
+
+.site-title a:hover {
+    text-decoration: none;
+}
+
+
+.top-logo-row-middle {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    position: relative;
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Modern Tech Blog functions and definitions
  *
@@ -30,7 +29,7 @@ if ( ! function_exists( 'modertechblog_setup' ) ) {
 		 */
 		load_theme_textdomain( 'moderntechblog', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head
+		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
@@ -146,6 +145,12 @@ add_action( 'widgets_init', 'moderntechblog_widgets_init' );
  */
 function moderntechblog_scripts() {
 	wp_enqueue_style(
+		'noto-sans-roboto-font',
+		'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap',
+		false,
+		MT_VERSION
+	);
+	wp_enqueue_style(
 		'moderntechblog-style',
 		get_stylesheet_uri(),
 		array(),
@@ -153,13 +158,34 @@ function moderntechblog_scripts() {
 	);
 	wp_enqueue_style(
 		'bootstrap-material',
-		get_template_directory_uri() . '/assets/css/bootstrap-material-design.min.css'
+		get_template_directory_uri() . '/assets/css/bootstrap-material-design.min.css',
+		array(),
+		MT_VERSION
 	);
 	wp_enqueue_style(
 		'custom',
-		get_template_directory_uri() . '/assets/css/custom.css'
+		get_template_directory_uri() . '/assets/css/custom.css',
+		array(),
+		MT_VERSION
 	);
 	wp_style_add_data( 'moderntechblog-style', 'rtl', 'replace' );
+	wp_enqueue_script(
+		'html5shiv',
+		'//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.js',
+		array(),
+		MT_VERSION,
+		true
+	);
+	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
+	wp_enqueue_script(
+		'respond',
+		'//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js',
+		array(),
+		MT_VERSION,
+		true
+	);
+	wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
+
 	wp_enqueue_script(
 		'jquery-js',
 		get_template_directory_uri() . '/assets/js/jquery.min.js',
@@ -203,6 +229,11 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.

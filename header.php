@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The header for our theme
  *
@@ -21,22 +20,16 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
 	<?php wp_head(); ?>
-	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
 </head>
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to Content', 'moderntechblog' ); ?>></a>
-		<header id="masthead" class="site-header">
-			<div class="site-branding">
+		<header id="masthead" class="site-header fixed-top">
+			<div class="site-branding top-logo-row">
+				<div class="site-title-wrapper">
 				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
@@ -55,7 +48,14 @@
 				$modertechblog_description = get_bloginfo( 'description', 'display' );
 				if ( $modertechblog_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo $modertechblog_description; ?></p>
+				</div>
+				<div class="site-description-wrapper">
+					<p class="site-description"><?php echo esc_html( $modertechblog_description ); ?></p>
+				</div>
+				<div class="top-logo-row-right">
+				<div class="devsite-header-upper-tabs">
+				</div>
+				</div>
 				<?php endif; ?>
 			</div> <!-- .site-branding -->
 
